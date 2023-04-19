@@ -1,0 +1,102 @@
+body {
+    background-image: url(bg-desktop.svg);
+    background-color: hsl(257, 40%, 49%);
+    color: white;
+}
+.container {
+    display: grid; /* Creating a grid container */
+    /* Defining the columns and rows of the grid */
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    grid-template-rows: auto 1fr auto; /* Three rows */
+    /* Defining the layout of the grid */
+    grid-template-areas: 
+      "header header" /* The first row will span across both columns */
+      "left right" /* The second row will have a left and right area */
+      "footer footer"; /* The third row will span across both columns */
+    height: 100vh; /* To fill the viewport */
+  }
+  
+      /* 
+     * We use grid-area on each child element to assign 
+     * it to the corresponding grid area we defined earlier.
+     */
+  .header {
+    grid-area: header; 
+  }
+
+  .header img {
+    width: 200px;
+    padding: 20px 0px 35px 20px;
+  }
+  
+  .left {
+    grid-area: left;
+    padding: 10px 50px 10px 100px;
+  }
+  
+  .right {
+    grid-area: right;
+    padding: 100px 250px 100px 0px;
+  }
+  
+  .footer {
+    grid-area: footer;
+    display: flex; /* to make the icons appear in a row */
+    justify-content: flex-end; /* to align the icons to the right */
+    align-items: center; /* to center the icons vertically */
+    padding: 10px; /* to add some padding between the icons and the border */
+    margin-left: auto; /* to push the element to the right */
+    margin-bottom: 30px;
+    margin-right: 30px;
+  }
+  
+.footer .icon {
+  width: 40px; /* set the width and height of the circle */
+  height: 40px;
+  border-radius: 50%; /* make the element a circle */
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; /* add some space between the circles */
+}
+
+.footer .icon img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* black to white */
+}
+
+.footer .icon:hover {
+    border-color: hsl(300, 69%, 71%);
+}
+
+.footer .icon:hover img {
+    /* Converted hsl to Css Filter */
+    filter: invert(87%) sepia(17%) saturate(6771%) hue-rotate(257deg) brightness(98%) contrast(85%);
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+    
+  p {
+     font-family: 'Open Sans', sans-serif;
+     font-weight: 400;
+  }
+
+  button {
+    background-color: white;
+    border: none;
+    padding: 10px 45px 10px 45px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: hsl(257, 40%, 49%);
+   }
+
+   button:hover {
+    background-color: hsl(300, 69%, 71%);
+    color: white;
+  }
